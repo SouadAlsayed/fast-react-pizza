@@ -31,6 +31,7 @@ function CreateOrder() {
     error: errorAddress,
   } = useSelector((state) => state.user);
   const isLoadingAddress = addressStatus === 'loading';
+
   const totalCartPrice = useSelector(getTotalCartPrice);
   const priority = withPriority ? totalCartPrice * 0.2 : 0;
   const totalPrice = totalCartPrice + priority;

@@ -22,6 +22,7 @@ function Order() {
     estimatedDelivery,
     cart,
   } = useLoaderData();
+
   const deliveryIn = calcMinutesLeft(estimatedDelivery);
 
   const fetcher = useFetcher();
@@ -92,7 +93,7 @@ function Order() {
 }
 
 export async function loader({ params }) {
-  const order = getOrder(params.orderId);
+  const order = await getOrder(params.orderId);
   return order;
 }
 
